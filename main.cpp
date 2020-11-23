@@ -27,6 +27,7 @@
     Fraction GetFraction();
     Fraction Multiply(Fraction, Fraction);
     Fraction Subtract(Fraction, Fraction);
+        void Banner();
         void Menu();
         void Print(Operations, Fraction, Fraction, Fraction);
         void ProcessCommand(Operations&);
@@ -40,7 +41,10 @@
 
         Operations choice = Quit;
         
+        Banner();
+
         do {
+
             Menu();
             QueryUser(choice);
             ProcessCommand(choice);
@@ -128,6 +132,17 @@
     } // Function Subtract()
 //  ========================
 
+//  ==============================
+    void Banner(void) {
+
+        cout << endl;
+        cout << "==================================" << endl;
+        cout << " Welcome to The Fraction Program" << endl;
+        cout << "   Lets crunch some numbers!" << endl;
+        cout << "   =========================" << endl;
+        cout << endl;
+    }  // Function Banner()
+//  =======================
 
 //  ==============
     void Menu() {
@@ -179,7 +194,7 @@
             switch (choice) {
                 case Addition: fC = Add(fA, fB);            break;
                 case Subtraction: fC = Subtract(fA, fB);    break;
-                case Multiplication: fC = Multiply(fA, fB);      break;
+                case Multiplication: fC = Multiply(fA, fB); break;
                 case Division: fC = Divide(fA, fB);         break;
                 default: cout << "Error condition detected." << endl;
             }  // switch
